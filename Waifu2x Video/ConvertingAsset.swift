@@ -231,7 +231,7 @@ class ConvertingAsset: Hashable, ObservableObject {
         let srFrameOutput = AVAssetWriterInput(
             mediaType: .video,
             outputSettings: [
-                AVVideoCodecKey: AVVideoCodecType.h264,
+                AVVideoCodecKey: outputCodec,
                 AVVideoWidthKey: NSNumber(value: Int(outputVideoSize.width)),
                 AVVideoHeightKey: NSNumber(value: Int(outputVideoSize.height))
             ]
