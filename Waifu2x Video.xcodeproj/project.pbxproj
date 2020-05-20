@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C07DDBA2475CB7800B17A37 /* waifu2x_anime_noise0_scale1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDAA2475CB7800B17A37 /* waifu2x_anime_noise0_scale1.mlmodel */; };
+		2C07DDBB2475CB7800B17A37 /* waifu2x_photo_noise3_scale2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDAB2475CB7800B17A37 /* waifu2x_photo_noise3_scale2.mlmodel */; };
+		2C07DDBC2475CB7800B17A37 /* waifu2x_anime_noise0_scale2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDAC2475CB7800B17A37 /* waifu2x_anime_noise0_scale2.mlmodel */; };
+		2C07DDBD2475CB7800B17A37 /* waifu2x_anime_noise1_scale2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDAD2475CB7800B17A37 /* waifu2x_anime_noise1_scale2.mlmodel */; };
+		2C07DDBE2475CB7800B17A37 /* waifu2x_anime_noise2_scale1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDAE2475CB7800B17A37 /* waifu2x_anime_noise2_scale1.mlmodel */; };
+		2C07DDBF2475CB7800B17A37 /* waifu2x_photo_noise0_scale2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDAF2475CB7800B17A37 /* waifu2x_photo_noise0_scale2.mlmodel */; };
+		2C07DDC02475CB7800B17A37 /* waifu2x_anime_noise1_scale1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDB02475CB7800B17A37 /* waifu2x_anime_noise1_scale1.mlmodel */; };
+		2C07DDC12475CB7800B17A37 /* waifu2x_photo_noise0_scale1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDB12475CB7800B17A37 /* waifu2x_photo_noise0_scale1.mlmodel */; };
+		2C07DDC22475CB7800B17A37 /* waifu2x_anime_noise2_scale2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDB22475CB7800B17A37 /* waifu2x_anime_noise2_scale2.mlmodel */; };
+		2C07DDC32475CB7800B17A37 /* waifu2x_photo_noise2_scale2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDB32475CB7800B17A37 /* waifu2x_photo_noise2_scale2.mlmodel */; };
+		2C07DDC42475CB7800B17A37 /* waifu2x_photo_noise1_scale2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDB42475CB7800B17A37 /* waifu2x_photo_noise1_scale2.mlmodel */; };
+		2C07DDC52475CB7800B17A37 /* waifu2x_photo_noise1_scale1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDB52475CB7800B17A37 /* waifu2x_photo_noise1_scale1.mlmodel */; };
+		2C07DDC62475CB7800B17A37 /* waifu2x_anime_noise3_scale1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDB62475CB7800B17A37 /* waifu2x_anime_noise3_scale1.mlmodel */; };
+		2C07DDC72475CB7800B17A37 /* waifu2x_anime_noise3_scale2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDB72475CB7800B17A37 /* waifu2x_anime_noise3_scale2.mlmodel */; };
+		2C07DDC82475CB7800B17A37 /* waifu2x_photo_noise2_scale1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDB82475CB7800B17A37 /* waifu2x_photo_noise2_scale1.mlmodel */; };
+		2C07DDC92475CB7800B17A37 /* waifu2x_photo_noise3_scale1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C07DDB92475CB7800B17A37 /* waifu2x_photo_noise3_scale1.mlmodel */; };
+		2C07DDD02475D3AC00B17A37 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2C07DDCF2475D3A600B17A37 /* LICENSE */; };
+		2C086BFF2474960A0045DF8B /* ModelTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C086BFB2474960A0045DF8B /* ModelTools.swift */; };
+		2C086C012474960A0045DF8B /* ClosedRange+Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C086BFD2474960A0045DF8B /* ClosedRange+Clamp.swift */; };
+		2C086C042474972E0045DF8B /* AddAssetSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C086C032474972E0045DF8B /* AddAssetSheet.swift */; };
+		2C086C072474E1190045DF8B /* waifu2x_scale2_denoise2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C086C062474E1190045DF8B /* waifu2x_scale2_denoise2.mlmodel */; };
+		2C9ED9172475A41900E810C4 /* AVFileType+UTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9ED9162475A41900E810C4 /* AVFileType+UTI.swift */; };
+		2C9ED9192475B24600E810C4 /* AVVideoCodecType+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9ED9182475B24600E810C4 /* AVVideoCodecType+Description.swift */; };
+		2C9ED91B2475BEB500E810C4 /* SaveFilePanelAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9ED91A2475BEB500E810C4 /* SaveFilePanelAccessory.swift */; };
+		2C9FD85C2474294A00863659 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD85B2474294A00863659 /* AppDelegate.swift */; };
+		2C9FD85E2474294A00863659 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD85D2474294A00863659 /* ContentView.swift */; };
+		2C9FD8602474294D00863659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FD85F2474294D00863659 /* Assets.xcassets */; };
+		2C9FD8632474294D00863659 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FD8622474294D00863659 /* Preview Assets.xcassets */; };
+		2C9FD8662474294D00863659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FD8642474294D00863659 /* Main.storyboard */; };
+		2C9FD86F247478B100863659 /* ConvertingAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD86E247478B100863659 /* ConvertingAsset.swift */; };
+		2C9FD8712474790F00863659 /* AssetSelectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD8702474790F00863659 /* AssetSelectionList.swift */; };
+		2C9FD8732474795600863659 /* AssetSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD8722474795600863659 /* AssetSelectionCell.swift */; };
+		2C9FD87524747B5100863659 /* AssetConversionConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FD87424747B5100863659 /* AssetConversionConfigurationView.swift */; };
+		2C9FD8782474844800863659 /* sample.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FD8772474844800863659 /* sample.mov */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C07DDAA2475CB7800B17A37 /* waifu2x_anime_noise0_scale1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_anime_noise0_scale1.mlmodel; sourceTree = "<group>"; };
+		2C07DDAB2475CB7800B17A37 /* waifu2x_photo_noise3_scale2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_photo_noise3_scale2.mlmodel; sourceTree = "<group>"; };
+		2C07DDAC2475CB7800B17A37 /* waifu2x_anime_noise0_scale2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_anime_noise0_scale2.mlmodel; sourceTree = "<group>"; };
+		2C07DDAD2475CB7800B17A37 /* waifu2x_anime_noise1_scale2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_anime_noise1_scale2.mlmodel; sourceTree = "<group>"; };
+		2C07DDAE2475CB7800B17A37 /* waifu2x_anime_noise2_scale1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_anime_noise2_scale1.mlmodel; sourceTree = "<group>"; };
+		2C07DDAF2475CB7800B17A37 /* waifu2x_photo_noise0_scale2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_photo_noise0_scale2.mlmodel; sourceTree = "<group>"; };
+		2C07DDB02475CB7800B17A37 /* waifu2x_anime_noise1_scale1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_anime_noise1_scale1.mlmodel; sourceTree = "<group>"; };
+		2C07DDB12475CB7800B17A37 /* waifu2x_photo_noise0_scale1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_photo_noise0_scale1.mlmodel; sourceTree = "<group>"; };
+		2C07DDB22475CB7800B17A37 /* waifu2x_anime_noise2_scale2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_anime_noise2_scale2.mlmodel; sourceTree = "<group>"; };
+		2C07DDB32475CB7800B17A37 /* waifu2x_photo_noise2_scale2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_photo_noise2_scale2.mlmodel; sourceTree = "<group>"; };
+		2C07DDB42475CB7800B17A37 /* waifu2x_photo_noise1_scale2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_photo_noise1_scale2.mlmodel; sourceTree = "<group>"; };
+		2C07DDB52475CB7800B17A37 /* waifu2x_photo_noise1_scale1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_photo_noise1_scale1.mlmodel; sourceTree = "<group>"; };
+		2C07DDB62475CB7800B17A37 /* waifu2x_anime_noise3_scale1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_anime_noise3_scale1.mlmodel; sourceTree = "<group>"; };
+		2C07DDB72475CB7800B17A37 /* waifu2x_anime_noise3_scale2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_anime_noise3_scale2.mlmodel; sourceTree = "<group>"; };
+		2C07DDB82475CB7800B17A37 /* waifu2x_photo_noise2_scale1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_photo_noise2_scale1.mlmodel; sourceTree = "<group>"; };
+		2C07DDB92475CB7800B17A37 /* waifu2x_photo_noise3_scale1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_photo_noise3_scale1.mlmodel; sourceTree = "<group>"; };
+		2C07DDCA2475CEED00B17A37 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2C07DDCE2475D19800B17A37 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
+		2C07DDCF2475D3A600B17A37 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2C086BFB2474960A0045DF8B /* ModelTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTools.swift; sourceTree = "<group>"; };
+		2C086BFD2474960A0045DF8B /* ClosedRange+Clamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClosedRange+Clamp.swift"; sourceTree = "<group>"; };
+		2C086C032474972E0045DF8B /* AddAssetSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssetSheet.swift; sourceTree = "<group>"; };
+		2C086C062474E1190045DF8B /* waifu2x_scale2_denoise2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = waifu2x_scale2_denoise2.mlmodel; sourceTree = "<group>"; };
+		2C9ED9162475A41900E810C4 /* AVFileType+UTI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVFileType+UTI.swift"; sourceTree = "<group>"; };
+		2C9ED9182475B24600E810C4 /* AVVideoCodecType+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVVideoCodecType+Description.swift"; sourceTree = "<group>"; };
+		2C9ED91A2475BEB500E810C4 /* SaveFilePanelAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFilePanelAccessory.swift; sourceTree = "<group>"; };
+		2C9FD8582474294A00863659 /* Waifu2x Video.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waifu2x Video.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9FD85B2474294A00863659 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2C9FD85D2474294A00863659 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2C9FD85F2474294D00863659 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C9FD8622474294D00863659 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2C9FD8652474294D00863659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2C9FD8672474294D00863659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C9FD8682474294D00863659 /* Waifu2x_Video.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Waifu2x_Video.entitlements; sourceTree = "<group>"; };
+		2C9FD86E247478B100863659 /* ConvertingAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertingAsset.swift; sourceTree = "<group>"; };
+		2C9FD8702474790F00863659 /* AssetSelectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSelectionList.swift; sourceTree = "<group>"; };
+		2C9FD8722474795600863659 /* AssetSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSelectionCell.swift; sourceTree = "<group>"; };
+		2C9FD87424747B5100863659 /* AssetConversionConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetConversionConfigurationView.swift; sourceTree = "<group>"; };
+		2C9FD8772474844800863659 /* sample.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sample.mov; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C9FD8552474294A00863659 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C07DDCC2475D08C00B17A37 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				2C07DDCF2475D3A600B17A37 /* LICENSE */,
+				2C07DDCE2475D19800B17A37 /* screenshot.png */,
+				2C07DDCA2475CEED00B17A37 /* README.md */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		2C086C052474E0D30045DF8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C07DDAA2475CB7800B17A37 /* waifu2x_anime_noise0_scale1.mlmodel */,
+				2C07DDAC2475CB7800B17A37 /* waifu2x_anime_noise0_scale2.mlmodel */,
+				2C07DDB02475CB7800B17A37 /* waifu2x_anime_noise1_scale1.mlmodel */,
+				2C07DDAD2475CB7800B17A37 /* waifu2x_anime_noise1_scale2.mlmodel */,
+				2C07DDAE2475CB7800B17A37 /* waifu2x_anime_noise2_scale1.mlmodel */,
+				2C07DDB22475CB7800B17A37 /* waifu2x_anime_noise2_scale2.mlmodel */,
+				2C07DDB62475CB7800B17A37 /* waifu2x_anime_noise3_scale1.mlmodel */,
+				2C07DDB72475CB7800B17A37 /* waifu2x_anime_noise3_scale2.mlmodel */,
+				2C07DDB12475CB7800B17A37 /* waifu2x_photo_noise0_scale1.mlmodel */,
+				2C07DDAF2475CB7800B17A37 /* waifu2x_photo_noise0_scale2.mlmodel */,
+				2C07DDB52475CB7800B17A37 /* waifu2x_photo_noise1_scale1.mlmodel */,
+				2C07DDB42475CB7800B17A37 /* waifu2x_photo_noise1_scale2.mlmodel */,
+				2C07DDB82475CB7800B17A37 /* waifu2x_photo_noise2_scale1.mlmodel */,
+				2C07DDB32475CB7800B17A37 /* waifu2x_photo_noise2_scale2.mlmodel */,
+				2C07DDB92475CB7800B17A37 /* waifu2x_photo_noise3_scale1.mlmodel */,
+				2C07DDAB2475CB7800B17A37 /* waifu2x_photo_noise3_scale2.mlmodel */,
+				2C086C062474E1190045DF8B /* waifu2x_scale2_denoise2.mlmodel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C9FD84F2474294A00863659 = {
+			isa = PBXGroup;
+			children = (
+				2C07DDCC2475D08C00B17A37 /* Misc */,
+				2C9FD8762474841500863659 /* Resources */,
+				2C9FD85A2474294A00863659 /* Waifu2x Video */,
+				2C9FD8592474294A00863659 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C9FD8592474294A00863659 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C9FD8582474294A00863659 /* Waifu2x Video.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C9FD85A2474294A00863659 /* Waifu2x Video */ = {
+			isa = PBXGroup;
+			children = (
+				2C086C052474E0D30045DF8B /* Models */,
+				2C086BFD2474960A0045DF8B /* ClosedRange+Clamp.swift */,
+				2C086BFB2474960A0045DF8B /* ModelTools.swift */,
+				2C9FD85B2474294A00863659 /* AppDelegate.swift */,
+				2C9FD85D2474294A00863659 /* ContentView.swift */,
+				2C9FD86E247478B100863659 /* ConvertingAsset.swift */,
+				2C9FD8702474790F00863659 /* AssetSelectionList.swift */,
+				2C9FD8722474795600863659 /* AssetSelectionCell.swift */,
+				2C9FD87424747B5100863659 /* AssetConversionConfigurationView.swift */,
+				2C086C032474972E0045DF8B /* AddAssetSheet.swift */,
+				2C9ED9162475A41900E810C4 /* AVFileType+UTI.swift */,
+				2C9ED9182475B24600E810C4 /* AVVideoCodecType+Description.swift */,
+				2C9ED91A2475BEB500E810C4 /* SaveFilePanelAccessory.swift */,
+				2C9FD85F2474294D00863659 /* Assets.xcassets */,
+				2C9FD8642474294D00863659 /* Main.storyboard */,
+				2C9FD8672474294D00863659 /* Info.plist */,
+				2C9FD8682474294D00863659 /* Waifu2x_Video.entitlements */,
+				2C9FD8612474294D00863659 /* Preview Content */,
+			);
+			path = "Waifu2x Video";
+			sourceTree = "<group>";
+		};
+		2C9FD8612474294D00863659 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2C9FD8622474294D00863659 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2C9FD8762474841500863659 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C9FD8772474844800863659 /* sample.mov */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C9FD8572474294A00863659 /* Waifu2x Video */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9FD86B2474294D00863659 /* Build configuration list for PBXNativeTarget "Waifu2x Video" */;
+			buildPhases = (
+				2C9FD8542474294A00863659 /* Sources */,
+				2C9FD8552474294A00863659 /* Frameworks */,
+				2C9FD8562474294A00863659 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Waifu2x Video";
+			productName = "Waifu2x Video";
+			productReference = 2C9FD8582474294A00863659 /* Waifu2x Video.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C9FD8502474294A00863659 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Marcus Zhou";
+				TargetAttributes = {
+					2C9FD8572474294A00863659 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 2C9FD8532474294A00863659 /* Build configuration list for PBXProject "Waifu2x Video" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C9FD84F2474294A00863659;
+			productRefGroup = 2C9FD8592474294A00863659 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C9FD8572474294A00863659 /* Waifu2x Video */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C9FD8562474294A00863659 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9FD8782474844800863659 /* sample.mov in Resources */,
+				2C9FD8662474294D00863659 /* Main.storyboard in Resources */,
+				2C9FD8632474294D00863659 /* Preview Assets.xcassets in Resources */,
+				2C9FD8602474294D00863659 /* Assets.xcassets in Resources */,
+				2C07DDD02475D3AC00B17A37 /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C9FD8542474294A00863659 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C07DDC22475CB7800B17A37 /* waifu2x_anime_noise2_scale2.mlmodel in Sources */,
+				2C07DDBC2475CB7800B17A37 /* waifu2x_anime_noise0_scale2.mlmodel in Sources */,
+				2C07DDBE2475CB7800B17A37 /* waifu2x_anime_noise2_scale1.mlmodel in Sources */,
+				2C9FD87524747B5100863659 /* AssetConversionConfigurationView.swift in Sources */,
+				2C9ED9192475B24600E810C4 /* AVVideoCodecType+Description.swift in Sources */,
+				2C07DDBD2475CB7800B17A37 /* waifu2x_anime_noise1_scale2.mlmodel in Sources */,
+				2C9ED91B2475BEB500E810C4 /* SaveFilePanelAccessory.swift in Sources */,
+				2C07DDBA2475CB7800B17A37 /* waifu2x_anime_noise0_scale1.mlmodel in Sources */,
+				2C9FD8712474790F00863659 /* AssetSelectionList.swift in Sources */,
+				2C07DDC02475CB7800B17A37 /* waifu2x_anime_noise1_scale1.mlmodel in Sources */,
+				2C086BFF2474960A0045DF8B /* ModelTools.swift in Sources */,
+				2C9FD85E2474294A00863659 /* ContentView.swift in Sources */,
+				2C07DDC52475CB7800B17A37 /* waifu2x_photo_noise1_scale1.mlmodel in Sources */,
+				2C086C042474972E0045DF8B /* AddAssetSheet.swift in Sources */,
+				2C9FD8732474795600863659 /* AssetSelectionCell.swift in Sources */,
+				2C07DDC32475CB7800B17A37 /* waifu2x_photo_noise2_scale2.mlmodel in Sources */,
+				2C9FD85C2474294A00863659 /* AppDelegate.swift in Sources */,
+				2C07DDC82475CB7800B17A37 /* waifu2x_photo_noise2_scale1.mlmodel in Sources */,
+				2C07DDC12475CB7800B17A37 /* waifu2x_photo_noise0_scale1.mlmodel in Sources */,
+				2C07DDC62475CB7800B17A37 /* waifu2x_anime_noise3_scale1.mlmodel in Sources */,
+				2C07DDC42475CB7800B17A37 /* waifu2x_photo_noise1_scale2.mlmodel in Sources */,
+				2C9ED9172475A41900E810C4 /* AVFileType+UTI.swift in Sources */,
+				2C086C012474960A0045DF8B /* ClosedRange+Clamp.swift in Sources */,
+				2C07DDBB2475CB7800B17A37 /* waifu2x_photo_noise3_scale2.mlmodel in Sources */,
+				2C07DDC92475CB7800B17A37 /* waifu2x_photo_noise3_scale1.mlmodel in Sources */,
+				2C07DDC72475CB7800B17A37 /* waifu2x_anime_noise3_scale2.mlmodel in Sources */,
+				2C07DDBF2475CB7800B17A37 /* waifu2x_photo_noise0_scale2.mlmodel in Sources */,
+				2C086C072474E1190045DF8B /* waifu2x_scale2_denoise2.mlmodel in Sources */,
+				2C9FD86F247478B100863659 /* ConvertingAsset.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C9FD8642474294D00863659 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C9FD8652474294D00863659 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C9FD8692474294D00863659 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2C9FD86A2474294D00863659 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2C9FD86C2474294D00863659 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Waifu2x Video/Waifu2x_Video.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Waifu2x Video/Preview Content\"";
+				DEVELOPMENT_TEAM = 8WB2V923XT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Waifu2x Video/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcuszhou.Waifu2x-Video";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2C9FD86D2474294D00863659 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Waifu2x Video/Waifu2x_Video.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Waifu2x Video/Preview Content\"";
+				DEVELOPMENT_TEAM = 8WB2V923XT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Waifu2x Video/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcuszhou.Waifu2x-Video";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C9FD8532474294A00863659 /* Build configuration list for PBXProject "Waifu2x Video" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9FD8692474294D00863659 /* Debug */,
+				2C9FD86A2474294D00863659 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C9FD86B2474294D00863659 /* Build configuration list for PBXNativeTarget "Waifu2x Video" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9FD86C2474294D00863659 /* Debug */,
+				2C9FD86D2474294D00863659 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C9FD8502474294A00863659 /* Project object */;
+}
