@@ -20,6 +20,10 @@ A video (only) super-resolution application powered by Waifu2x, SwiftUI, Metal, 
     along with Waifu2x Video.  If not, see <http://www.gnu.org/licenses/>.
     
 
+## Installation
+
+Download the compiled binary from [Releases](https://github.com/SuperMarcus/waifu2x-video-mac/releases). Decompress the `zip` file and drag `Waifu2x Video.app` into your Applications folder.
+
 ## Usage
 
 Waifu2x Video will only work for systems running macOS 10.15 or higher. The graphical interface is intuitive enough so you should be able to figure out how to use it by yourself.
