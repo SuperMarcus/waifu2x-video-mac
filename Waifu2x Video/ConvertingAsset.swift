@@ -215,6 +215,7 @@ class ConvertingAsset: Hashable, ObservableObject {
                 AVFormatIDKey: kAudioFormatLinearPCM
             ]
         )
+        frameReadOutput.alwaysCopiesSampleData = false
         assetReader.add(frameReadOutput)
         assetReader.add(audioReadOutput)
         
@@ -245,7 +246,7 @@ class ConvertingAsset: Hashable, ObservableObject {
 
         assetWriter.add(srFrameOutput)
         assetWriter.add(srAudioOutput)
-        
+                
         // Reset flags
         self._audioTrackDidFinish = false
         self._videoTrackDidFinish = false
@@ -258,7 +259,8 @@ class ConvertingAsset: Hashable, ObservableObject {
         print("[ConvertingAsset] Current reader status is \(assetReader.status.rawValue), writer status is \(assetWriter.status.rawValue)")
         
         // Process frames
-        srFrameOutput.requestMediaDataWhenReady(on: _videoTrackQueue) {
+        srFrameOutput.requestMediaDataWhenReady(on: _videoTrackQueue) { [weak self] in
+            guard let self = self else { return }
             let cleanup = {
                 self._videoTrackDidFinish = true
                 srFrameOutput.markAsFinished()
@@ -267,75 +269,78 @@ class ConvertingAsset: Hashable, ObservableObject {
             
             do {
                 while srFrameOutput.isReadyForMoreMediaData {
-                    if self._interruptFlag {
-                        DispatchQueue.main.sync {
-                            self.currentState = .queued
-                            cleanup()
-                        }
-                        break
-                    }
-                    
-                    if assetReader.status != .reading {
-                        if let error = assetReader.error {
+                    try autoreleasepool {
+                        if self._interruptFlag {
                             DispatchQueue.main.sync {
-                                print("[SR] Reader error: \(error)")
-                                self._interruptFlag = true
-                                self.error = error
-                                self.currentState = .failed
+                                self.currentState = .queued
+                                cleanup()
                             }
+                            return
                         }
-                        cleanup()
-                        break
-                    }
-                    
-                    if assetWriter.status == .failed {
-                        DispatchQueue.main.sync {
-                            print("[SR] Reader error: \(assetWriter.error!)")
-                            self._interruptFlag = true
-                            self.error = assetWriter.error
-                            self.currentState = .failed
+                        
+                        if assetReader.status != .reading {
+                            if let error = assetReader.error {
+                                DispatchQueue.main.sync {
+                                    print("[SR] Reader error: \(error)")
+                                    self._interruptFlag = true
+                                    self.error = error
+                                    self.currentState = .failed
+                                }
+                            }
                             cleanup()
+                            return
                         }
-                        break
+                        
+                        if assetWriter.status == .failed {
+                            DispatchQueue.main.sync {
+                                print("[SR] Reader error: \(assetWriter.error!)")
+                                self._interruptFlag = true
+                                self.error = assetWriter.error
+                                self.currentState = .failed
+                                cleanup()
+                            }
+                            return
+                        }
+                        
+                        guard let frameBuf = frameReadOutput.copyNextSampleBuffer() else {
+                            print("[SR] Reached the end of video frames.")
+                            cleanup()
+                            return
+                        }
+                        let frameImgBuf = CMSampleBufferGetImageBuffer(frameBuf)!
+                        
+                        let frameTimestamp = CMSampleBufferGetPresentationTimeStamp(frameBuf)
+                        let frameTime = CMTimeGetSeconds(frameTimestamp)
+                        
+                        DispatchQueue.main.async {
+                            self._updateFps()
+                            self.currentProgress = Double(frameTime / sampleVideoDuration)
+                        }
+
+                        let frameWidth = CVPixelBufferGetWidth(frameImgBuf)
+                        let frameHeight = CVPixelBufferGetHeight(frameImgBuf)
+
+                        let batchProvider = try Waifu2xModelFrameBatchProvider(frameImgBuf, options: self.model.options)
+                        let predictions = try predictionModel.predictions(fromBatch: batchProvider)
+                        
+
+                        let outputCollector = Waifu2xModelOutputCollector(
+                            outputSize: (
+                                frameWidth * self.model.options.inputOutputRatio,
+                                frameHeight * self.model.options.inputOutputRatio
+                            ),
+                            options: self.model.options
+                        )
+
+                        let srFrame = try outputCollector.collect(predictions)
+
+                        let srFrameBuf = try createSampleBuffer(
+                            reference: frameBuf,
+                            pixelBuffer: srFrame
+                        )
+
+                        srFrameOutput.append(srFrameBuf)
                     }
-                    
-                    guard let frameBuf = frameReadOutput.copyNextSampleBuffer() else {
-                        print("[SR] Reached the end of video frames.")
-                        cleanup()
-                        break
-                    }
-                    let frameImgBuf = CMSampleBufferGetImageBuffer(frameBuf)!
-                    
-                    let frameTimestamp = CMSampleBufferGetPresentationTimeStamp(frameBuf)
-                    let frameTime = CMTimeGetSeconds(frameTimestamp)
-                    
-                    DispatchQueue.main.async {
-                        self._updateFps()
-                        self.currentProgress = Double(frameTime / sampleVideoDuration)
-                    }
-
-                    let frameWidth = CVPixelBufferGetWidth(frameImgBuf)
-                    let frameHeight = CVPixelBufferGetHeight(frameImgBuf)
-
-                    let batchProvider = try Waifu2xModelFrameBatchProvider(frameImgBuf, options: self.model.options)
-                    let predictions = try predictionModel.predictions(fromBatch: batchProvider)
-
-                    let outputCollector = Waifu2xModelOutputCollector(
-                        outputSize: (
-                            frameWidth * self.model.options.inputOutputRatio,
-                            frameHeight * self.model.options.inputOutputRatio
-                        ),
-                        options: self.model.options
-                    )
-
-                    let srFrame = try outputCollector.collect(predictions)
-
-                    let srFrameBuf = try createSampleBuffer(
-                        reference: frameBuf,
-                        pixelBuffer: srFrame
-                    )
-
-                    srFrameOutput.append(srFrameBuf)
                 }
             } catch {
                 DispatchQueue.main.sync {
@@ -348,7 +353,8 @@ class ConvertingAsset: Hashable, ObservableObject {
             }
         }
 
-        srAudioOutput.requestMediaDataWhenReady(on: _audioTrackQueue) {
+        srAudioOutput.requestMediaDataWhenReady(on: _audioTrackQueue) { [weak self] in
+            guard let self = self else { return }
             let cleanup = {
                 self._audioTrackDidFinish = true
                 srAudioOutput.markAsFinished()
@@ -356,23 +362,25 @@ class ConvertingAsset: Hashable, ObservableObject {
             }
             
             while srAudioOutput.isReadyForMoreMediaData {
-                if self._interruptFlag {
-                    cleanup()
-                    break
+                autoreleasepool {
+                    if self._interruptFlag {
+                        cleanup()
+                        return
+                    }
+                    
+                    if assetReader.status != .reading {
+                        cleanup()
+                        return
+                    }
+                    
+                    guard let nextSample = audioReadOutput.copyNextSampleBuffer() else {
+                        print("[SR] Reached the end of audio track.")
+                        cleanup()
+                        return
+                    }
+                    
+                    srAudioOutput.append(nextSample)
                 }
-                
-                if assetReader.status != .reading {
-                    cleanup()
-                    break
-                }
-                
-                guard let nextSample = audioReadOutput.copyNextSampleBuffer() else {
-                    print("[SR] Reached the end of audio track.")
-                    cleanup()
-                    break
-                }
-                
-                srAudioOutput.append(nextSample)
             }
         }
     }
