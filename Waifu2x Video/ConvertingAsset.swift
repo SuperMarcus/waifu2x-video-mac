@@ -176,10 +176,10 @@ class ConvertingAsset: Hashable, ObservableObject {
         print("[SR] Output: \(outputUrl.absoluteString)")
         
         let avAsset = self.avAsset
-        guard let sampleVideoTrack = avAsset.tracks(withMediaType: .video).first,
-            let sampleAudioTrack = avAsset.tracks(withMediaType: .audio).first else {
+        guard let sampleVideoTrack = avAsset.tracks(withMediaType: .video).first else {
             throw SRError.tracksNotFound
         }
+        
         let sampleVideoSize = sampleVideoTrack.naturalSize
         let outputVideoSize = CGSize(
             width: sampleVideoSize.width * CGFloat(model.options.inputOutputRatio),
@@ -209,15 +209,26 @@ class ConvertingAsset: Hashable, ObservableObject {
                 String(kCVPixelBufferPixelFormatTypeKey): kCVPixelFormatType_32ARGB
             ]
         )
-        let audioReadOutput = AVAssetReaderTrackOutput(
-            track: sampleAudioTrack,
-            outputSettings: [
-                AVFormatIDKey: kAudioFormatLinearPCM
-            ]
-        )
+        
         frameReadOutput.alwaysCopiesSampleData = false
         assetReader.add(frameReadOutput)
-        assetReader.add(audioReadOutput)
+        
+        // Optional audio reader
+        let audioReadOutput: AVAssetReaderTrackOutput? = {
+            if let sampleAudioTrack = avAsset.tracks(withMediaType: .audio).first {
+                return AVAssetReaderTrackOutput(
+                    track: sampleAudioTrack,
+                    outputSettings: [
+                        AVFormatIDKey: kAudioFormatLinearPCM
+                    ]
+                )
+            }
+            return nil
+        }()
+        
+        if let audioReadOutput {
+            assetReader.add(audioReadOutput)
+        }
         
         // Remove existing file
         if FileManager.default.fileExists(atPath: outputUrl.path) {
@@ -238,12 +249,12 @@ class ConvertingAsset: Hashable, ObservableObject {
             ]
         )
         srFrameOutput.expectsMediaDataInRealTime = false
-
+        
         let srAudioOutput = AVAssetWriterInput(
             mediaType: .audio,
             outputSettings: nil
         )
-
+        
         assetWriter.add(srFrameOutput)
         assetWriter.add(srAudioOutput)
                 
@@ -352,7 +363,7 @@ class ConvertingAsset: Hashable, ObservableObject {
                 }
             }
         }
-
+        
         srAudioOutput.requestMediaDataWhenReady(on: _audioTrackQueue) { [weak self] in
             guard let self = self else { return }
             let cleanup = {
@@ -373,12 +384,11 @@ class ConvertingAsset: Hashable, ObservableObject {
                         return
                     }
                     
-                    guard let nextSample = audioReadOutput.copyNextSampleBuffer() else {
+                    guard let audioReadOutput, let nextSample = audioReadOutput.copyNextSampleBuffer() else {
                         print("[SR] Reached the end of audio track.")
                         cleanup()
                         return
                     }
-                    
                     srAudioOutput.append(nextSample)
                 }
             }
